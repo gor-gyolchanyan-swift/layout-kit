@@ -26,12 +26,12 @@ extension SymbolicRegion {
 
     @inlinable
     public var width: SymbolicDistance<SymbolicLocationKeyX, Self, Self> {
-        return self[.trailing] - self[.leading]
+        return self[.leading] ... self[.trailing]
     }
 
     @inlinable
     public var height: SymbolicDistance<SymbolicLocationKeyY, Self, Self> {
-        return self[.bottom] - self[.top]
+        return self[.top] ... self[.bottom]
     }
 }
 

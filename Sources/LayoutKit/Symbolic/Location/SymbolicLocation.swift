@@ -33,9 +33,9 @@ extension SymbolicLocation: CustomStringConvertible {
 }
 
 @inlinable
-public func - <Key, TargetRegion, SourceRegion>(
-    _ target: SymbolicLocation<Key, TargetRegion>,
-    _ source: SymbolicLocation<Key, SourceRegion>
+public func ... <Key, SourceRegion, TargetRegion>(
+    _ source: SymbolicLocation<Key, SourceRegion>,
+    _ target: SymbolicLocation<Key, TargetRegion>
 ) -> SymbolicDistance<Key, SourceRegion, TargetRegion> {
     return .init(from: source, to: target, scale: 1, bias: 0)
 }
